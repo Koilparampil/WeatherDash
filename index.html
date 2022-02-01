@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather DashBoard</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn4.iconfinder.com/data/icons/smart-homes-outline/60/044_-_weather_dashboard-512.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/css/style.css">
 </head>
 <body>
-    
+    <header class= "text-center header">
+        <h1>
+            Weather DashBoard
+        </h1>
+    </header>
+   <div class="container">
+       <div class="row">
+           <div class="col-2">
+               <form>
+                   <label for="CityInput">Search For a City:</label>
+                   <input type="text" name="CityInput" id="CityInput" autofocus="true">
+                   <button type="submit" class="btn">Search</button>
+               </form>
+               <hr>
+               <div class="history">
+                   <!-- this is where the history goes, -->
+               </div>
+           </div>
+           <div class="col-1"></div>
+           <div class="col-9">
+            <main>
+                <div class="card">
+                    <div class="card-header">
+                      Current Weather
+                    </div>
+                    <div class="card-body">
+                        <h2 class="currentCity">Atlanta</h2>
+                        <p class="temperature">Temperature: </p>
+                        <p class="windSpeed">Wind Speed: </p>
+                        <p class="humidity">Humidity: </p>
+                        <p class="UVIndex">UV Index: </p>
+                    </div>
+                  </div>
+                <div class="container">
+                    <h2>5-day Forcast</h2>
+                    <div class="row  ">
+                        <div class="card  mx-auto dayCards"></div>
+                        <div class="card  mx-auto dayCards"></div>
+                        <div class="card  mx-auto dayCards"></div>
+                        <div class="card  mx-auto dayCards"></div>
+                        <div class="card  mx-auto dayCards"></div>
+                    </div>
+                </div>
+            </main>
+           </div>
+       </div>
+   </div> 
 </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="Assets/js/script.js"></script>
 </html>
