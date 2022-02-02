@@ -1,8 +1,9 @@
 var CityInput = document.querySelector("#CityInput")
 var CityInputBtn = document.querySelector("#CityInputBtn")
 var APIKey = "b0ee139b845758874a0f6115b913322d"
+var momentToday = moment().format("l")
 
-
+console.log(momentToday);
 function searchCity (event){
     event.preventDefault();
     searchingFor=CityInput.value
@@ -36,8 +37,8 @@ function getWeather(lat,lon,currentCity){
 
 };
 function SetCurrent(theData,currentCity){
-    console.log(currentCity);
-    $(".currentCity").html(currentCity);
+    //console.log(currentCity);
+    $(".currentCity").html(currentCity +" " +momentToday);
     $(".temperature").html("Temp: "+ theData.current.temp+ "&#8457;");
     $(".windSpeed").html("Wind Speed: "+ theData.current.wind_speed + "mph");
     $(".humidity").html("Humidity: "+ theData.current.humidity +"%");
