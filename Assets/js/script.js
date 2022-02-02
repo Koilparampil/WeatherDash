@@ -7,26 +7,40 @@ $("#day2Date").html(moment().add(2, 'days').format('L'))
 $("#day3Date").html(moment().add(3, 'days').format('L'))
 $("#day4Date").html(moment().add(4, 'days').format('L'))
 $("#day5Date").html(moment().add(5, 'days').format('L'))
-
-console.log(momentToday);
-function searchCity (event){
+//console.log(momentToday);
+cities=JSON.parse(localStorage.getItem("cities"))||[]
+cityHistory(cities);
+function getInput(event){
     event.preventDefault();
     searchingFor=CityInput.value
-    if (searchingFor){
-    var geoAPIURL="http://api.openweathermap.org/geo/1.0/direct?q="+searchingFor+"&limit=5&appid="+APIKey;
+    if(searchingFor){
+    searchCity(searchingFor);
+    localStorage.setItem("LastCity", searchingFor);
+    if (cities.includes(searchingFor)){
+
+    }else{
+        cities.push(searchingFor);
+    }
+    localStorage.setItem('cities',JSON.stringify(cities));
+    cityHistory(cities)
+    CityInput.value=""
+    }
+};
+function searchCity (currentCity){
+    if (currentCity){
+    var geoAPIURL="http://api.openweathermap.org/geo/1.0/direct?q="+currentCity+"&limit=5&appid="+APIKey;
     fetch(geoAPIURL).then(function(response){
         if (response.ok){
             response.json().then(function(data){
                 var latitude=data[0].lat;
                 var longitude=data[0].lon;
-                getWeather(latitude,longitude,searchingFor);
+                getWeather(latitude,longitude,currentCity);
             });
         }else{
             alert("Error: " + response.statusText);
         }
     });
     };
-    CityInput.value=""
 };
 function getWeather(lat,lon,currentCity){
     weathAPIURL="https://api.openweathermap.org/data/2.5/onecall?lat="+JSON.stringify(lat)+"&lon="+JSON.stringify(lon)+"&exclude=hourly,minutely,alerts&units=imperial&appid="+APIKey;
@@ -90,5 +104,11 @@ function setFuture(theData){
 
 
 }
+function cityHistory(cities){
+    $("#nolistlist").html("")
+    $.each(cities, function(i,cityH){
+        $(`<button class=bttn data-city=${cityH}>${cityH}</button>`).appendTo("#nolistlist")
 
-$(CityInputBtn).on('click',searchCity);
+    })
+}
+$(CityInputBtn).on('click',getInput);

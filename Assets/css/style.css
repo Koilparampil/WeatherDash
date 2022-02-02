@@ -11,3 +11,30 @@
     background-color:#33475a ;
     color: white;
 }
+.currentCity{
+    text-transform: capitalize;
+}
+#nolistlist{
+    list-style-type: none;
+}
+
+
+.bttn{
+    display:inline-block;
+    font-weight:400;
+    color:#212529;
+    text-align:center;
+    vertical-align:middle;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    background-color:#b7b7b7;
+    border:1px solid transparent;
+    font-size:1rem;
+    line-height:1;
+    border-radius:.25rem;
+    width: 189px;
+    transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+@media (prefers-reduced-motion:reduce){.bttn{transition:none}}.bttn:hover{color:#212529;text-decoration:none}.bttn.focus,
+.bttn:focus{outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)}.bttn.disabled,.btn:disabled{opacity:.65}a.bttn.disabled,fieldset:disabled a.bttn{pointer-events:none}
