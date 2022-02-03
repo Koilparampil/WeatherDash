@@ -64,7 +64,7 @@ function getWeather(lat,lon,currentCity){
 function setCurrent(theData,currentCity){
     //console.log(theData.current.uvi);
     var cIcon1= theData.current.weather[0].icon;
-    $(".currentCity").html(currentCity +" " +momentToday+" "+`<img src='http://openweathermap.org/img/wn/${cIcon1}@2x.png'>`);
+    $(".currentCity").html(currentCity +" " +momentToday+" "+`<img src='https://openweathermap.org/img/wn/${cIcon1}@2x.png'>`);
     $(".temperature").html("Temp: "+ theData.current.temp+ "&#8457;");
     $(".windSpeed").html("Wind Speed: "+ theData.current.wind_speed + "mph");
     $(".humidity").html("Humidity: "+ theData.current.humidity +"%");
@@ -91,11 +91,11 @@ function setFuture(theData){
     var wIcon3=theData.daily[2].weather[0].icon;
     var wIcon4=theData.daily[3].weather[0].icon;
     var wIcon5=theData.daily[4].weather[0].icon;
-    $("#icon1").html(`<img src='http://openweathermap.org/img/wn/${wIcon1}@2x.png'>`);
-    $("#icon2").html(`<img src='http://openweathermap.org/img/wn/${wIcon2}@2x.png'>`);
-    $("#icon3").html(`<img src='http://openweathermap.org/img/wn/${wIcon3}@2x.png'>`);
-    $("#icon4").html(`<img src='http://openweathermap.org/img/wn/${wIcon4}@2x.png'>`);
-    $("#icon5").html(`<img src='http://openweathermap.org/img/wn/${wIcon5}@2x.png'>`);
+    $("#icon1").html(`<img src='https://openweathermap.org/img/wn/${wIcon1}@2x.png'>`);
+    $("#icon2").html(`<img src='https://openweathermap.org/img/wn/${wIcon2}@2x.png'>`);
+    $("#icon3").html(`<img src='https://openweathermap.org/img/wn/${wIcon3}@2x.png'>`);
+    $("#icon4").html(`<img src='https://openweathermap.org/img/wn/${wIcon4}@2x.png'>`);
+    $("#icon5").html(`<img src='https://openweathermap.org/img/wn/${wIcon5}@2x.png'>`);
     //Max temp....there has to be a way to do this in a loop
     $("#tempMxF1").html("Max Temp: "+theData.daily[0].temp.max+ "&#8457;");
     $("#tempMxF2").html("Max Temp: "+theData.daily[1].temp.max+ "&#8457;");
