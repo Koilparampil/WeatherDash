@@ -33,7 +33,7 @@ function getInput(event){
 };
 function searchCity (currentCity){
     if (currentCity){
-    var geoAPIURL="http://api.openweathermap.org/geo/1.0/direct?q="+currentCity+"&limit=5&appid="+APIKey;
+    var geoAPIURL="https://api.openweathermap.org/geo/1.0/direct?q="+currentCity+"&limit=5&appid="+APIKey;
     fetch(geoAPIURL).then(function(response){
         if (response.ok){
             response.json().then(function(data){
