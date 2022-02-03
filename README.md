@@ -20,14 +20,16 @@ JQuery, Font Awesome, Moment.js, the openweathermap API  and bootstrap
 
 After landing on the page you will be presented with a search bar on the Left side of the page. 
 
-![Full Webpage](Assets/images/Screenshot_of_Full_page.png)
+![Full Webpage](Assets/img/Screenshot_of_Full_page.png)
 
 
 Write the name of any city that you want to know the weather of and then hit the Search button right underneath. 
 
-![Test message](Assets/images/Test_message.png)
+![Test message](Assets/img/Test_message.png)
 
-![Test message](Assets/images/TestClick.png)
+![Test message](Assets/img/TestClick.png)
+
+[Here](https://th3-0g-kresher.github.io/WeatherDash/) is a link to the deploed website: [https://th3-0g-kresher.github.io/WeatherDash/](https://th3-0g-kresher.github.io/WeatherDash/)
 
 ## Installation
 
