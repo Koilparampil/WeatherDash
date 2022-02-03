@@ -68,6 +68,20 @@ function setCurrent(theData,currentCity){
     $(".temperature").html("Temp: "+ theData.current.temp+ "&#8457;");
     $(".windSpeed").html("Wind Speed: "+ theData.current.wind_speed + "mph");
     $(".humidity").html("Humidity: "+ theData.current.humidity +"%");
+    UVindex=theData.current.uvi
+    if( UVindex >=8){
+        $(".UVIndex").css("background-color", "red");
+        $(".UVIndex").css("color", "white");
+    }else if (UVindex>=6&& UVindex<8){
+        $(".UVIndex").css("background-color", 'orange');
+        $(".UVIndex").css("color", "white");
+    }else if (UVindex>=4&& UVindex<6){
+        $(".UVIndex").css("background-color", 'yellow');
+        $(".UVIndex").css("color", "white");
+    }else{
+        $(".UVIndex").css("background-color", 'green');
+        $(".UVIndex").css("color", "white");
+    };
     $(".UVIndex").html(theData.current.uvi);
 }
 function setFuture(theData){
