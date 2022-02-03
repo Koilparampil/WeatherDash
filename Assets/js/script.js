@@ -24,7 +24,12 @@ function getInput(event){
     localStorage.setItem('cities',JSON.stringify(cities));
     cityHistory(cities)
     CityInput.value=""
-    }
+    };
+    $(".bttn").on('click',function(event){
+        console.log("hey this pressed")
+        console.log(event.target.innerHTML);
+        searchCity(event.target.innerHTML);
+    });
 };
 function searchCity (currentCity){
     if (currentCity){
@@ -47,7 +52,7 @@ function getWeather(lat,lon,currentCity){
     fetch(weathAPIURL).then(function(response){
         if(response.ok){
             response.json().then(function(data){
-                console.log(data);
+                //console.log(data);
                 setCurrent(data,currentCity);
                 setFuture(data);
             });
@@ -57,7 +62,7 @@ function getWeather(lat,lon,currentCity){
 
 };
 function setCurrent(theData,currentCity){
-    //console.log(currentCity);
+    //console.log(theData.current.uvi);
     var cIcon1= theData.current.weather[0].icon;
     $(".currentCity").html(currentCity +" " +momentToday+" "+`<img src='http://openweathermap.org/img/wn/${cIcon1}@2x.png'>`);
     $(".temperature").html("Temp: "+ theData.current.temp+ "&#8457;");
@@ -107,8 +112,20 @@ function setFuture(theData){
 function cityHistory(cities){
     $("#nolistlist").html("")
     $.each(cities, function(i,cityH){
-        $(`<button class=bttn data-city=${cityH}>${cityH}</button>`).appendTo("#nolistlist")
+        $(`<button class=bttn data-City=${cityH}>${cityH}</button>`).appendTo("#nolistlist")
 
     })
 }
+
+
+$(".bttn").on('click',function(event){
+    console.log("hey this pressed")
+    console.log(event.target.innerHTML);
+    searchCity(event.target.innerHTML);
+});
 $(CityInputBtn).on('click',getInput);
+$("#clearBtn").on('click',function(){
+    $("#nolistlist").empty();
+    localStorage.removeItem("cities");
+    cities=JSON.parse(localStorage.getItem("cities"))||[];
+});

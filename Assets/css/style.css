@@ -38,3 +38,10 @@
     transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
 @media (prefers-reduced-motion:reduce){.bttn{transition:none}}.bttn:hover{color:#212529;text-decoration:none}.bttn.focus,
 .bttn:focus{outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)}.bttn.disabled,.btn:disabled{opacity:.65}a.bttn.disabled,fieldset:disabled a.bttn{pointer-events:none}
+
+#clearBtn{
+    background-color: #f14668;
+    border-color: transparent;
+    color: #fff;
+    border-radius:.25rem;
+}
