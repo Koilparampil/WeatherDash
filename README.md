@@ -29,7 +29,7 @@ Write the name of any city that you want to know the weather of and then hit the
 
 ![Test message](Assets/img/TestClick.png)
 
-[Here](https://th3-0g-kresher.github.io/WeatherDash/) is a link to the deploed website: [https://th3-0g-kresher.github.io/WeatherDash/](https://th3-0g-kresher.github.io/WeatherDash/)
+[Here](https://Koilparampil.github.io/WeatherDash/) is a link to the deployed website: [https://Koilparampil.github.io/WeatherDash/](https://Koilparampil.github.io/WeatherDash/)
 
 ## Installation
 
